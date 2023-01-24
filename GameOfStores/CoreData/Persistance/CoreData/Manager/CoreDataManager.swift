@@ -30,7 +30,7 @@ final class CoreDataManager {
     
     private func uniqueGameNamePredicate(of request: NSFetchRequest<Game>, with uniqueName: String) -> NSPredicate {
         request.predicate =
-            NSPredicate(format: "name == %@", uniqueName)
+        NSPredicate(format: "name == %@", uniqueName)
         return request.predicate!
     }
     
@@ -42,6 +42,42 @@ final class CoreDataManager {
         } catch {
             completion(.failure(error))
         }
-
+        
+    }
+    
+    func checkIsFavourite(with uniqueGameName: String, completion: @escaping (Result<Bool, Error>) -> Void){
+        
+        do {
+            let request = getRequest()
+            request.predicate = uniqueGameNamePredicate(of: request, with: uniqueGameName)
+            let fetchedResults = try moc.fetch(request)
+            fetchedResults.first != nil ? completion(.success(true)) : completion(.success(false))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func createGame(with gameResult: GameDetailResults) {
+        let game = Game(context: moc)
+        game.name = gameResult.name
+        game.metacritic = String(gameResult.metacritic)
+        game.backgroundImage = gameResult.backgroundImage
+        game.released = gameResult.released
+        coreDataStack.saveContext()
+    }
+    
+    func deleteGame(with uniqueName: String, completion: @escaping (Error) -> Void) {
+        let request = getRequest()
+        request.predicate = uniqueGameNamePredicate(of: request, with: uniqueName)
+        do {
+            let fetchedResult = try moc.fetch(request)
+            if let gameModel = fetchedResult.first {
+                print("debug: deleting game model which is \(gameModel)")
+                moc.delete(gameModel)
+                coreDataStack.saveContext()
+            }
+        } catch {
+            completion(error)
+        }
     }
 }
