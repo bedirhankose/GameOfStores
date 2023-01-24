@@ -144,5 +144,46 @@ final class GameHomeController: UIViewController, GameOutput{
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
+// MARK: - Snapkit Constraints
+    private func makePageController() {
+        pageController.snp.makeConstraints { make in
+            make.top.equalTo(scrollView.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.32)
+            make.height.equalTo(20)
+        }
+    }
+    private func makeScrollView() {
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().inset(20)
+            make.height.equalToSuperview().multipliedBy(0.32)
+        }
+    }
+    
+    private func makeCollection() {
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.left.right.equalTo(scrollView)
+            make.bottom.equalToSuperview().inset(20)
+        }
+    }
+    
+    private func makeLabel() {
+        errorLabel.snp.remakeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.centerY.equalTo(view.snp.centerY)
+        }
+    }
+    private func remakeCollection() {
+        collectionView.snp.remakeConstraints { make in
+            make.top.equalTo(pageController.snp.bottom).offset(10)
+            make.left.right.equalTo(scrollView)
+            make.bottom.equalToSuperview().inset(20)
+        }
+    }
+
 }
 
