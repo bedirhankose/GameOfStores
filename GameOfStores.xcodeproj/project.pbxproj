@@ -13,6 +13,11 @@
 		7F9395C3298002F6002085C0 /* GameOfStores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395C1298002F6002085C0 /* GameOfStores.xcdatamodeld */; };
 		7F9395C5298002F7002085C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9395C4298002F7002085C0 /* Assets.xcassets */; };
 		7F9395C8298002F7002085C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9395C6298002F7002085C0 /* LaunchScreen.storyboard */; };
+		7F9395D5298006B4002085C0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9395D4298006B4002085C0 /* Alamofire */; };
+		7F9395D8298006D7002085C0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9395D7298006D7002085C0 /* Kingfisher */; };
+		7F9395DB298006EB002085C0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9395DA298006EB002085C0 /* SnapKit */; };
+		7F9395DE2980070A002085C0 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9395DD2980070A002085C0 /* SwiftyGif */; };
+		7F9395E029800727002085C0 /* splash.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F9395DF29800727002085C0 /* splash.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,7 @@
 		7F9395C4298002F7002085C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F9395C7298002F7002085C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F9395C9298002F7002085C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F9395DF29800727002085C0 /* splash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splash.gif; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9395DB298006EB002085C0 /* SnapKit in Frameworks */,
+				7F9395DE2980070A002085C0 /* SwiftyGif in Frameworks */,
+				7F9395D8298006D7002085C0 /* Kingfisher in Frameworks */,
+				7F9395D5298006B4002085C0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +66,7 @@
 		7F9395B7298002F6002085C0 /* GameOfStores */ = {
 			isa = PBXGroup;
 			children = (
+				7F9395DF29800727002085C0 /* splash.gif */,
 				7F9395D229800493002085C0 /* CoreData */,
 				7F9395D129800479002085C0 /* Support */,
 				7F9395D029800451002085C0 /* Resources */,
@@ -115,6 +126,12 @@
 			dependencies = (
 			);
 			name = GameOfStores;
+			packageProductDependencies = (
+				7F9395D4298006B4002085C0 /* Alamofire */,
+				7F9395D7298006D7002085C0 /* Kingfisher */,
+				7F9395DA298006EB002085C0 /* SnapKit */,
+				7F9395DD2980070A002085C0 /* SwiftyGif */,
+			);
 			productName = GameOfStores;
 			productReference = 7F9395B5298002F6002085C0 /* GameOfStores.app */;
 			productType = "com.apple.product-type.application";
@@ -143,6 +160,12 @@
 				Base,
 			);
 			mainGroup = 7F9395AC298002F6002085C0;
+			packageReferences = (
+				7F9395D3298006B4002085C0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7F9395D6298006D7002085C0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7F9395D9298006EB002085C0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7F9395DC2980070A002085C0 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
+			);
 			productRefGroup = 7F9395B6298002F6002085C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9395E029800727002085C0 /* splash.gif in Resources */,
 				7F9395C8298002F7002085C0 /* LaunchScreen.storyboard in Resources */,
 				7F9395C5298002F7002085C0 /* Assets.xcassets in Resources */,
 			);
@@ -388,6 +412,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F9395D3298006B4002085C0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		7F9395D6298006D7002085C0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		7F9395D9298006EB002085C0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		7F9395DC2980070A002085C0 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F9395D4298006B4002085C0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F9395D3298006B4002085C0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7F9395D7298006D7002085C0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F9395D6298006D7002085C0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		7F9395DA298006EB002085C0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F9395D9298006EB002085C0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7F9395DD2980070A002085C0 /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F9395DC2980070A002085C0 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7F9395C1298002F6002085C0 /* GameOfStores.xcdatamodeld */ = {
