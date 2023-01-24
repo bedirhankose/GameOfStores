@@ -187,3 +187,43 @@ final class GameHomeController: UIViewController, GameOutput{
 
 }
 
+// MARK: - Search Result Functions
+extension GameHomeController: UISearchResultsUpdating {
+    
+    private func searchAnimation() {
+        if searchController.isActive {
+            searchController.searchBar.showsCancelButton = true
+            scrollView.isHidden = true
+            pageController.isHidden = true
+            collectionView.snp.makeConstraints { make in
+                make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+                make.left.equalToSuperview().offset(10)
+                make.right.equalToSuperview().inset(10)
+                make.bottom.equalToSuperview().inset(20)
+            }
+            collectionView.frame.size.width = view.frame.width
+            collectionView.frame.size.height = view.frame.height / 2.1
+            
+        } else {
+            scrollView.isHidden = false
+            pageController.isHidden = false
+            searchController.searchBar.showsCancelButton = false
+            remakeCollection()
+        }
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        searchData = gameData.filter({ (result:GameResult) -> Bool in
+            let nameMatch = result.name.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+            return nameMatch != nil
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        searchAnimation()
+        if let searchText = searchController.searchBar.text {
+            filterContentForSearchText(searchText)
+            collectionView.reloadData()
+        }
+    }
+}
