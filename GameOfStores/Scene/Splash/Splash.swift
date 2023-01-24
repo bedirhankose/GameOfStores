@@ -33,3 +33,20 @@ final class Splash: UIViewController {
         animation()
     }
 }
+
+// MARK: - Network Control
+extension Splash {
+    
+    func isNetwork() {
+        if Connect.isConnected() {
+            let viewController = GameTabBarController()
+            viewController.modalPresentationStyle = .fullScreen
+            self.show(viewController, sender: nil)
+        } else {
+            let errorAlert = UIAlertController(title: SplashConstant.SplashNetwork.alertTitle.rawValue, message: SplashConstant.SplashNetwork.alertMessage.rawValue,preferredStyle: .alert)
+            let errorAction = UIAlertAction(title: SplashConstant.SplashNetwork.actionTitle.rawValue,style: .cancel)
+            errorAlert.addAction(errorAction)
+            self.present(errorAlert, animated: true)
+        }
+    }
+}
