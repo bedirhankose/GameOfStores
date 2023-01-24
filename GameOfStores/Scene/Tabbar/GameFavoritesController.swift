@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class GameFavoritesController: UIViewController {
-
+    
     var favoritedGames: [Game] = [] {
         didSet {
             collectionView.reloadData()
@@ -35,7 +35,7 @@ class GameFavoritesController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         CoreDataManager.shared.getGamesFromPersistance { result in
             switch result {
             case .success(let games):
@@ -46,8 +46,31 @@ class GameFavoritesController: UIViewController {
             }
         }
     }
+    // MARK: - Functions
+    private func configure() {
+        addSubviews()
+        drawDesign()
+        makeCollectionView()
+    }
     
-
+    private func drawDesign() {
+        collectionView.register(GameCollectionViewCell.self, forCellWithReuseIdentifier: GameCollectionViewCell.Identifier.path.rawValue)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        view.backgroundColor = .white
+    }
     
+    private func addSubviews() {
+        view.addSubview(collectionView)
+    }
+}
 
+extension GameFavoritesController {
+    private func makeCollectionView() {
+        collectionView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview()
+        }
+    }
 }
