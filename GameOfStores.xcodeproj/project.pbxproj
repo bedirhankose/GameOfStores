@@ -18,6 +18,7 @@
 		7F9395DB298006EB002085C0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9395DA298006EB002085C0 /* SnapKit */; };
 		7F9395DE2980070A002085C0 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9395DD2980070A002085C0 /* SwiftyGif */; };
 		7F9395E029800727002085C0 /* splash.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F9395DF29800727002085C0 /* splash.gif */; };
+		7F9395E329801121002085C0 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395E229801121002085C0 /* Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7F9395C7298002F7002085C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F9395C9298002F7002085C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9395DF29800727002085C0 /* splash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splash.gif; sourceTree = SOURCE_ROOT; };
+		7F9395E229801121002085C0 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		7F9395B7298002F6002085C0 /* GameOfStores */ = {
 			isa = PBXGroup;
 			children = (
+				7F9395E1298010A0002085C0 /* WebService */,
 				7F9395DF29800727002085C0 /* splash.gif */,
 				7F9395D229800493002085C0 /* CoreData */,
 				7F9395D129800479002085C0 /* Support */,
@@ -108,6 +111,14 @@
 				7F9395C1298002F6002085C0 /* GameOfStores.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7F9395E1298010A0002085C0 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				7F9395E229801121002085C0 /* Services.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9395E329801121002085C0 /* Services.swift in Sources */,
 				7F9395C3298002F6002085C0 /* GameOfStores.xcdatamodeld in Sources */,
 				7F9395BD298002F6002085C0 /* GameHomeController.swift in Sources */,
 				7F9395B9298002F6002085C0 /* AppDelegate.swift in Sources */,
