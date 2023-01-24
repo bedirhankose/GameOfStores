@@ -19,7 +19,7 @@ final class Connect {
 
 // MARK: - Splash Screen & Swifty Gif
 final class Splash: UIViewController {
-
+    
     let logoAnimationView = LogoAnimationView()
     
     override func viewDidLoad() {
@@ -50,3 +50,38 @@ extension Splash {
         }
     }
 }
+
+// MARK: - View Functions
+extension Splash {
+    
+    private func configure() {
+        view.backgroundColor = .white
+        view.addSubview(logoAnimationView.logoGifImageView)
+        drawDesign()
+        logoAnimationView.logoGifImageView.delegate = self
+        logoAnimationView.logoGifImageView.startAnimatingGif()
+    }
+    
+    private func drawDesign() {
+        logoAnimationView.logoGifImageView.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(view.unsafelyUnwrapped)
+            make.height.equalTo(view.unsafelyUnwrapped)
+        }
+    }
+    
+    private func animation() {
+        UIView.animate(withDuration: 3.2, animations: {
+            self.logoAnimationView.logoGifImageView.alpha = 3.2
+        }, completion: { _ in
+            self.isNetwork()
+        })
+    }
+}
+
+extension Splash: SwiftyGifDelegate {
+    func gifDidStop(sender: UIImageView) {
+        logoAnimationView.isHidden = true
+    }
+}
+
