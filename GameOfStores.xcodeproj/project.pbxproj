@@ -76,6 +76,7 @@
 		7F9395B7298002F6002085C0 /* GameOfStores */ = {
 			isa = PBXGroup;
 			children = (
+				7F9395F429801CC7002085C0 /* Scene */,
 				7F9395ED29801806002085C0 /* Models */,
 				7F9395E1298010A0002085C0 /* WebService */,
 				7F9395DF29800727002085C0 /* splash.gif */,
@@ -83,7 +84,6 @@
 				7F9395D129800479002085C0 /* Support */,
 				7F9395D029800451002085C0 /* Resources */,
 				7F9395CF2980043E002085C0 /* App */,
-				7F9395BC298002F6002085C0 /* GameHomeController.swift */,
 			);
 			path = GameOfStores;
 			sourceTree = "<group>";
@@ -195,6 +195,22 @@
 				7F9395F229801866002085C0 /* GameListModel.swift */,
 			);
 			path = "Game List";
+			sourceTree = "<group>";
+		};
+		7F9395F429801CC7002085C0 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				7F9395F529801CD7002085C0 /* Home */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		7F9395F529801CD7002085C0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7F9395BC298002F6002085C0 /* GameHomeController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
