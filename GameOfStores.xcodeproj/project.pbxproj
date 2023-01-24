@@ -27,6 +27,7 @@
 		7F9395FA29802054002085C0 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395F929802054002085C0 /* GameCollectionViewCell.swift */; };
 		7F9395FD2980216B002085C0 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395FC2980216B002085C0 /* GameDetailViewModel.swift */; };
 		7F9395FF298021C5002085C0 /* GameDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395FE298021C5002085C0 /* GameDetailController.swift */; };
+		7F939602298024DA002085C0 /* LogoAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F939601298024DA002085C0 /* LogoAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		7F9395F929802054002085C0 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F9395FC2980216B002085C0 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		7F9395FE298021C5002085C0 /* GameDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailController.swift; sourceTree = "<group>"; };
+		7F939601298024DA002085C0 /* LogoAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 		7F9395F429801CC7002085C0 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7F9396002980244E002085C0 /* Splash */,
 				7F9395FB29802119002085C0 /* Detail */,
 				7F9395F829802029002085C0 /* Cell */,
 				7F9395F529801CD7002085C0 /* Home */,
@@ -239,6 +242,14 @@
 				7F9395FE298021C5002085C0 /* GameDetailController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		7F9396002980244E002085C0 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				7F939601298024DA002085C0 /* LogoAnimationView.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 				7F9395BD298002F6002085C0 /* GameHomeController.swift in Sources */,
 				7F9395FF298021C5002085C0 /* GameDetailController.swift in Sources */,
 				7F9395B9298002F6002085C0 /* AppDelegate.swift in Sources */,
+				7F939602298024DA002085C0 /* LogoAnimationView.swift in Sources */,
 				7F9395F129801848002085C0 /* GameDetailModel.swift in Sources */,
 				7F9395F729801FCD002085C0 /* GameViewModel.swift in Sources */,
 				7F9395BB298002F6002085C0 /* SceneDelegate.swift in Sources */,
