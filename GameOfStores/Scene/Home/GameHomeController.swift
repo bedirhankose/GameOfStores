@@ -41,7 +41,7 @@ final class GameHomeController: UIViewController, GameOutput{
         scroll.isPagingEnabled = true
         scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.contentMode = .scaleAspectFit
-        scroll.backgroundColor = .black
+        scroll.backgroundColor = .systemGray4
         scroll.layer.cornerRadius = 15
         scroll.clipsToBounds = true
         scroll.contentSize = CGSize(width: view.frame.width * 3.6 , height: 0)
@@ -52,7 +52,7 @@ final class GameHomeController: UIViewController, GameOutput{
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .systemGray4
         return collectionView
     }()
     private lazy var pageController: UIPageControl = {
@@ -60,7 +60,7 @@ final class GameHomeController: UIViewController, GameOutput{
         page.numberOfPages = 3
         page.currentPage = 0
         page.translatesAutoresizingMaskIntoConstraints = false
-        page.pageIndicatorTintColor = UIColor.black
+        page.pageIndicatorTintColor = UIColor.systemGray
         page.currentPageIndicatorTintColor = UIColor.systemRed
         return page
     }()
@@ -134,7 +134,7 @@ final class GameHomeController: UIViewController, GameOutput{
     }
     
     private func drawDesign() {
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         searchController.searchBar.placeholder =  "Search Games"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController

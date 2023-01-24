@@ -30,7 +30,7 @@ class LogoAnimationView: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = .white
+        backgroundColor = .systemGray4
         addSubview(logoGifImageView)
     }
     
