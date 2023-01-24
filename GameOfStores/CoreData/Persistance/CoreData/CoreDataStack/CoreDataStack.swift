@@ -18,4 +18,16 @@ final class CoreDataStack {
     init(modelName: String) {
         self.modelName = modelName
     }
+    
+    // MARK: - PersistentContainer
+    
+    private lazy var storeContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: modelName)
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
 }
