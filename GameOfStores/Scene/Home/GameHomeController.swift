@@ -92,6 +92,12 @@ final class GameHomeController: UIViewController, GameOutput{
         self.searchData = data
     }
     
+// MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configure()
+        title = "Home"
+    }
     
 }
 
