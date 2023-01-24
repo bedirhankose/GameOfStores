@@ -79,6 +79,19 @@ final class GameHomeController: UIViewController, GameOutput{
     private lazy var image2 = UIImageView()
     private lazy var scrollImage: [UIImageView] = [image0, image1, image2]
     
+// MARK: - Helpers
+    private lazy var gameData: [GameResult] = []
+    private lazy var error = String()
+    
+// MARK: - SearchControl
+    private func isSearch(to search: Bool) {
+        self.isSearch  = search
+    }
+    
+    private func searchData(to data: [GameResult]) {
+        self.searchData = data
+    }
+    
     
 }
 
