@@ -227,3 +227,25 @@ extension GameHomeController: UISearchResultsUpdating {
         }
     }
 }
+
+// MARK: - Scroll
+extension GameHomeController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageController.currentPage = Int(pageNumber)
+    }
+    
+    private func scrollImage(gameResult: [GameResult]) {
+        for games in 0..<scrollImage.count {
+            let gamePage = gameResult[games]
+            scrollImage[games].frame = CGRect(
+                x: scrollView.frame.width * CGFloat(games),
+                y: 0,
+                width: scrollView.frame.width,
+                height: scrollView.frame.height
+            )
+            scrollImage[games].kf.setImage(with: URL(string: gamePage.backgroundImage)!)
+            scrollView.addSubview(scrollImage[games])
+        }
+    }
+}
