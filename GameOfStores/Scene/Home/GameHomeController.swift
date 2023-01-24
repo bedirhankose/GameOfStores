@@ -29,7 +29,7 @@ final class GameHomeController: UIViewController, GameOutput{
     private var searchData: [GameResult] = []
     private var isSearch = Bool()
     
-// MARK: - UI ELEMENTS
+    // MARK: - UI ELEMENTS
     private let searchController: UISearchController = {
         let search = UISearchController()
         return search
@@ -73,17 +73,17 @@ final class GameHomeController: UIViewController, GameOutput{
         return label
     }()
     
-// MARK: - Scroll UIElements
+    // MARK: - Scroll UIElements
     private lazy var image0 = UIImageView()
     private lazy var image1 = UIImageView()
     private lazy var image2 = UIImageView()
     private lazy var scrollImage: [UIImageView] = [image0, image1, image2]
     
-// MARK: - Helpers
+    // MARK: - Helpers
     private lazy var gameData: [GameResult] = []
     private lazy var error = String()
     
-// MARK: - SearchControl
+    // MARK: - SearchControl
     private func isSearch(to search: Bool) {
         self.isSearch  = search
     }
@@ -92,14 +92,14 @@ final class GameHomeController: UIViewController, GameOutput{
         self.searchData = data
     }
     
-// MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         title = "Home"
     }
     
-// MARK: - Functions
+    // MARK: - Functions
     private func configure() {
         addSubview()
         drawDesign()
@@ -145,7 +145,7 @@ final class GameHomeController: UIViewController, GameOutput{
         collectionView.dataSource = self
     }
     
-// MARK: - Snapkit Constraints
+    // MARK: - Snapkit Constraints
     private func makePageController() {
         pageController.snp.makeConstraints { make in
             make.top.equalTo(scrollView.snp.bottom).offset(10)
@@ -184,7 +184,7 @@ final class GameHomeController: UIViewController, GameOutput{
             make.bottom.equalToSuperview().inset(20)
         }
     }
-
+    
 }
 
 // MARK: - Search Result Functions
@@ -249,3 +249,47 @@ extension GameHomeController: UIScrollViewDelegate {
         }
     }
 }
+// MARK: - Collection View Func
+extension GameHomeController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.minimumLineSpacing = 15
+        return CGSize( width: collectionView.frame.size.width, height: collectionView.frame.size.height / 2.8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if searchController.isActive {
+            return searchData.count
+        } else {
+            return gameData.count
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameCollectionViewCell.Identifier.path.rawValue, for: indexPath) as? GameCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.layer.borderWidth = 3
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.cornerRadius = 12
+        cell.clipsToBounds = true
+        
+        if searchController.isActive {
+            cell.saveModel(model: searchData[indexPath.row])
+        } else {
+            cell.saveModel(model: gameData[indexPath.row])
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if searchController.isActive {
+            viewModel.delegate?.selectedGame(gameId: searchData[indexPath.row].id)
+        } else {
+            viewModel.delegate?.selectedGame(gameId: gameData[indexPath.row].id)
+        }
+    }
+}
+
