@@ -175,6 +175,60 @@ class GameDetailController: UIViewController {
     func propertyUI(game: GameDetailResults) {
         gameID = game.id
     }
-    
-    
 }
+
+// MARK: - Snapkit Constraints
+extension GameDetailController {
+    private func makeHorizontalStackView() {
+        horizontalStackView.snp.makeConstraints { make in
+            make.left.right.equalTo(imageView)
+            make.top.equalTo(imageView.snp.bottom).offset(5)
+        }
+    }
+    
+    private func makeVerticalStackView() {
+        verticalStackView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+            make.left.right.bottom.equalToSuperview()
+        }
+    }
+    
+    private func makeImageView() {
+        imageView.snp.makeConstraints { make in
+            make.height.equalTo(view.frame.height / 2.4)
+            make.width.equalTo(view.frame.width / 1.2)
+        }
+    }
+    
+    private func makeTextView() {
+        descriptionTextView.snp.makeConstraints { make in
+            make.top.equalTo(horizontalStackView.snp.bottom).offset(40)
+            make.left.equalTo(view).offset(28)
+            make.right.equalTo(view).inset(28)
+        }
+    }
+    private func makeLikeButton() {
+        favoriteButton.snp.makeConstraints { make in
+            make.right.equalTo(imageView)
+            make.top.equalTo(imageView)
+            make.width.height.equalTo(100)
+        }
+    }
+}
+
+// MARK: - DetailController ViewModel
+extension GameDetailController: GameDetailViewDelegate {
+    func handleOutPut(_ output: GameDetailOutPut) {
+        switch output {
+        case .gameDetailList(let game):
+            propertyUI(game: game)
+        case .gameDetailError(let error):
+            errorMessage = error
+        }
+    }
+}
+
+
+
+
+
