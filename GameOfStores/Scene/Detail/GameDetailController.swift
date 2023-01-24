@@ -8,7 +8,7 @@
 import UIKit
 
 class GameDetailController: UIViewController {
-
+    
     // MARK: - Properties
     private var gameDetailResults: GameDetailResults
     var gameID: Int?
@@ -98,15 +98,25 @@ class GameDetailController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configure()
+        favoriteButton.addTarget(self, action: #selector(favoriteList(_:)), for: .touchUpInside)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        CoreDataManager.shared.checkIsFavourite(with: gameDetailResults.name) { result in
+            switch result {
+            case .success(let bool):
+                bool ? self.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : self.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
-
     
-
+    
 }
