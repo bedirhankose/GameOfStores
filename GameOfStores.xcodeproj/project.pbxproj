@@ -32,6 +32,10 @@
 		7F939607298026ED002085C0 /* GameFavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F939606298026ED002085C0 /* GameFavoritesController.swift */; };
 		7F93960929802837002085C0 /* GameTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93960829802837002085C0 /* GameTabBarController.swift */; };
 		7F93960E298029A4002085C0 /* TabbarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93960D298029A4002085C0 /* TabbarExtensions.swift */; };
+		7F93961329802A28002085C0 /* Splash Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93961229802A28002085C0 /* Splash Constant.swift */; };
+		7F93961529802A5A002085C0 /* Network Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93961429802A5A002085C0 /* Network Constant.swift */; };
+		7F93961729802A87002085C0 /* GameConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93961629802A87002085C0 /* GameConstant.swift */; };
+		7F93961929802AA9002085C0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93961829802AA9002085C0 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		7F939606298026ED002085C0 /* GameFavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoritesController.swift; sourceTree = "<group>"; };
 		7F93960829802837002085C0 /* GameTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabBarController.swift; sourceTree = "<group>"; };
 		7F93960D298029A4002085C0 /* TabbarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarExtensions.swift; sourceTree = "<group>"; };
+		7F93961229802A28002085C0 /* Splash Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash Constant.swift"; sourceTree = "<group>"; };
+		7F93961429802A5A002085C0 /* Network Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Constant.swift"; sourceTree = "<group>"; };
+		7F93961629802A87002085C0 /* GameConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstant.swift; sourceTree = "<group>"; };
+		7F93961829802AA9002085C0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +292,9 @@
 		7F93960B29802936002085C0 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				7F93961129802A08002085C0 /* Base Constant */,
+				7F939610298029FE002085C0 /* Game Constant */,
+				7F93960F298029F0002085C0 /* Network Constant */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -294,6 +305,31 @@
 				7F93960D298029A4002085C0 /* TabbarExtensions.swift */,
 			);
 			path = "Tabbar+Extensions";
+			sourceTree = "<group>";
+		};
+		7F93960F298029F0002085C0 /* Network Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7F93961229802A28002085C0 /* Splash Constant.swift */,
+				7F93961429802A5A002085C0 /* Network Constant.swift */,
+			);
+			path = "Network Constant";
+			sourceTree = "<group>";
+		};
+		7F939610298029FE002085C0 /* Game Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7F93961629802A87002085C0 /* GameConstant.swift */,
+			);
+			path = "Game Constant";
+			sourceTree = "<group>";
+		};
+		7F93961129802A08002085C0 /* Base Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7F93961829802AA9002085C0 /* Constant.swift */,
+			);
+			path = "Base Constant";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,13 +424,17 @@
 				7F9395E329801121002085C0 /* Services.swift in Sources */,
 				7F9395F329801866002085C0 /* GameListModel.swift in Sources */,
 				7F9395C3298002F6002085C0 /* GameOfStores.xcdatamodeld in Sources */,
+				7F93961529802A5A002085C0 /* Network Constant.swift in Sources */,
 				7F9395BD298002F6002085C0 /* GameHomeController.swift in Sources */,
+				7F93961329802A28002085C0 /* Splash Constant.swift in Sources */,
 				7F939607298026ED002085C0 /* GameFavoritesController.swift in Sources */,
+				7F93961729802A87002085C0 /* GameConstant.swift in Sources */,
 				7F9395FF298021C5002085C0 /* GameDetailController.swift in Sources */,
 				7F9395B9298002F6002085C0 /* AppDelegate.swift in Sources */,
 				7F939602298024DA002085C0 /* LogoAnimationView.swift in Sources */,
 				7F9395F129801848002085C0 /* GameDetailModel.swift in Sources */,
 				7F93960929802837002085C0 /* GameTabBarController.swift in Sources */,
+				7F93961929802AA9002085C0 /* Constant.swift in Sources */,
 				7F9395F729801FCD002085C0 /* GameViewModel.swift in Sources */,
 				7F9395BB298002F6002085C0 /* SceneDelegate.swift in Sources */,
 			);
