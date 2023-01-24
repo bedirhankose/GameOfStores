@@ -73,6 +73,12 @@ final class GameHomeController: UIViewController, GameOutput{
         return label
     }()
     
+// MARK: - Scroll UIElements
+    private lazy var image0 = UIImageView()
+    private lazy var image1 = UIImageView()
+    private lazy var image2 = UIImageView()
+    private lazy var scrollImage: [UIImageView] = [image0, image1, image2]
+    
     
 }
 
