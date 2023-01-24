@@ -30,6 +30,7 @@
 		7F939602298024DA002085C0 /* LogoAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F939601298024DA002085C0 /* LogoAnimationView.swift */; };
 		7F9396042980257C002085C0 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9396032980257C002085C0 /* Splash.swift */; };
 		7F939607298026ED002085C0 /* GameFavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F939606298026ED002085C0 /* GameFavoritesController.swift */; };
+		7F93960929802837002085C0 /* GameTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93960829802837002085C0 /* GameTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		7F939601298024DA002085C0 /* LogoAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAnimationView.swift; sourceTree = "<group>"; };
 		7F9396032980257C002085C0 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		7F939606298026ED002085C0 /* GameFavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoritesController.swift; sourceTree = "<group>"; };
+		7F93960829802837002085C0 /* GameTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				7F939606298026ED002085C0 /* GameFavoritesController.swift */,
+				7F93960829802837002085C0 /* GameTabBarController.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				7F9395B9298002F6002085C0 /* AppDelegate.swift in Sources */,
 				7F939602298024DA002085C0 /* LogoAnimationView.swift in Sources */,
 				7F9395F129801848002085C0 /* GameDetailModel.swift in Sources */,
+				7F93960929802837002085C0 /* GameTabBarController.swift in Sources */,
 				7F9395F729801FCD002085C0 /* GameViewModel.swift in Sources */,
 				7F9395BB298002F6002085C0 /* SceneDelegate.swift in Sources */,
 			);
