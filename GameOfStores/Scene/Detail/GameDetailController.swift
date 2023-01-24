@@ -151,5 +151,30 @@ class GameDetailController: UIViewController {
         verticalStackView.addArrangedSubview(descriptionTextView)
     }
     
+    // MARK: - Core Data
+    @objc func favoriteList(_ favoriteButton: UIButton) {
+        
+        CoreDataManager.shared.checkIsFavourite(with: gameDetailResults.name) { result in
+            switch result {
+            case .success(let bool):
+                if bool {
+                    CoreDataManager.shared.deleteGame(with: self.gameDetailResults.name) { error in
+                        print(error)
+                    }
+                    favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                } else {
+                    CoreDataManager.shared.createGame(with: self.gameDetailResults)
+                    favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func propertyUI(game: GameDetailResults) {
+        gameID = game.id
+    }
+    
     
 }
