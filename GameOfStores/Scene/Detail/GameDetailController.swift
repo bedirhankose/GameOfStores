@@ -116,7 +116,40 @@ class GameDetailController: UIViewController {
             }
         }
     }
+    // MARK: - Functions
+    private func configure() {
+        subviews()
+        drawDesign()
+        makeVerticalStackView()
+        makeTextView()
+        makeImageView()
+        makeHorizontalStackView()
+        makeLikeButton()
+        propertyUI(game: gameDetailResults)
+        handleOutPut(GameDetailOutPut.gameDetailList(gameDetailResults))
+    }
     
+    private func drawDesign() {
+        view.backgroundColor = .white
+        let urlImage = URL(string: gameDetailResults.backgroundImage)
+        imageView.kf.setImage(with: urlImage)
+        nameLabel.text = gameDetailResults.name
+        let replacedText = gameDetailResults.gameResultsDescription.replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "").replacingOccurrences(of: "<br />", with: "").replacingOccurrences(of: "<br>", with: "")
+        descriptionTextView.text = replacedText
+        metacriticLabel.text = "Rating: \(String(gameDetailResults.metacritic))"
+        releasedLabel.text = gameDetailResults.released
+    }
+    
+    private func subviews() {
+        view.addSubview(verticalStackView)
+        view.addSubview(favoriteButton)
+        horizontalStackView.addArrangedSubview(metacriticLabel)
+        horizontalStackView.addArrangedSubview(releasedLabel)
+        verticalStackView.addArrangedSubview(nameLabel)
+        verticalStackView.addArrangedSubview(imageView)
+        verticalStackView.addArrangedSubview(horizontalStackView)
+        verticalStackView.addArrangedSubview(descriptionTextView)
+    }
     
     
 }
