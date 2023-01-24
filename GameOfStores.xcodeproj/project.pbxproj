@@ -31,6 +31,7 @@
 		7F9396042980257C002085C0 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9396032980257C002085C0 /* Splash.swift */; };
 		7F939607298026ED002085C0 /* GameFavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F939606298026ED002085C0 /* GameFavoritesController.swift */; };
 		7F93960929802837002085C0 /* GameTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93960829802837002085C0 /* GameTabBarController.swift */; };
+		7F93960E298029A4002085C0 /* TabbarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93960D298029A4002085C0 /* TabbarExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		7F9396032980257C002085C0 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		7F939606298026ED002085C0 /* GameFavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoritesController.swift; sourceTree = "<group>"; };
 		7F93960829802837002085C0 /* GameTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabBarController.swift; sourceTree = "<group>"; };
+		7F93960D298029A4002085C0 /* TabbarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		7F9395B7298002F6002085C0 /* GameOfStores */ = {
 			isa = PBXGroup;
 			children = (
+				7F93960A2980292E002085C0 /* Extensions */,
 				7F9395F429801CC7002085C0 /* Scene */,
 				7F9395ED29801806002085C0 /* Models */,
 				7F9395E1298010A0002085C0 /* WebService */,
@@ -269,6 +272,30 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
+		7F93960A2980292E002085C0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7F93960C29802941002085C0 /* Tabbar+Extensions */,
+				7F93960B29802936002085C0 /* Constant */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7F93960B29802936002085C0 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		7F93960C29802941002085C0 /* Tabbar+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7F93960D298029A4002085C0 /* TabbarExtensions.swift */,
+			);
+			path = "Tabbar+Extensions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,6 +382,7 @@
 				7F9395EC29801446002085C0 /* CoreDataStack.swift in Sources */,
 				7F9395FD2980216B002085C0 /* GameDetailViewModel.swift in Sources */,
 				7F9395FA29802054002085C0 /* GameCollectionViewCell.swift in Sources */,
+				7F93960E298029A4002085C0 /* TabbarExtensions.swift in Sources */,
 				7F9395EA298013F6002085C0 /* CoreDataManager.swift in Sources */,
 				7F9396042980257C002085C0 /* Splash.swift in Sources */,
 				7F9395E329801121002085C0 /* Services.swift in Sources */,
