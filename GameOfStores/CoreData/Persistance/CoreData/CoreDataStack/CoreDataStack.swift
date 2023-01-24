@@ -30,4 +30,24 @@ final class CoreDataStack {
         })
         return container
     }()
+    
+    // MARK: - MoC
+    lazy var managedContext: NSManagedObjectContext = {
+        let context = storeContainer.viewContext
+        return context
+    }()
+    
+    // MARK: - Core Data Saving support
+    
+    func saveContext () {
+        guard managedContext.hasChanges else {
+            return
+        }
+        do {
+            try managedContext.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
 }
