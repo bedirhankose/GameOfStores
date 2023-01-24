@@ -67,4 +67,37 @@ final class GameCollectionViewCell: UICollectionViewCell {
         makeMetacritic()
     }
 }
+
+// MARK: - GameHomeController Snapkit Constraints
+extension GameCollectionViewCell {
+    private func makeImage() {
+        gameImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.width.equalTo(150)
+            make.height.equalTo(150)
+        }
+    }
+    
+    private func makeName() {
+        gameNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(contentView.safeAreaLayoutGuide).offset(5)
+            make.left.equalTo(gameImageView.snp.right).offset(10)
+        }
+    }
+    
+    private func makeReleased() {
+        gameReleasedLabel.snp.makeConstraints { make in
+            make.top.equalTo(gameNameLabel.snp.bottom).offset(5)
+            make.left.equalTo(gameImageView.snp.right).offset(10)
+        }
+    }
+    
+    private func makeMetacritic() {
+        gameMetacriticLabel.snp.makeConstraints { make in
+            make.top.equalTo(gameReleasedLabel.snp.bottom).offset(5)
+            make.left.equalTo(gameImageView.snp.right).offset(10)
+        }
+    }
 }
+
