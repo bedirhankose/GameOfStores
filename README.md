@@ -13,7 +13,7 @@ A programmatically created application that pulls API data from the RAWG website
 
 2. Open in Xcode: open GameOfStores.xcprohect.
 
-## Adding AWS SDK iOS via Swift Package Manager
+## Adding SDK iOS via Swift Package Manager
 
 1. Open your project in Xcode 11.0 or above
 
