@@ -25,6 +25,11 @@ final class GameHomeController: UIViewController, GameOutput{
         }
     }
     
+    private var viewModel: IGameViewModel = GameViewModel(service: Services())
+    private var searchData: [GameResult] = []
+    private var isSearch = Bool()
+    
+    
     
 }
 
