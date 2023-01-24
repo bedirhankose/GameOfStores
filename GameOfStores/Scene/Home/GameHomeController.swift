@@ -99,5 +99,50 @@ final class GameHomeController: UIViewController, GameOutput{
         title = "Home"
     }
     
+// MARK: - Functions
+    private func configure() {
+        addSubview()
+        drawDesign()
+        makePageController()
+        makeScrollView()
+        remakeCollection()
+        makeLabel()
+        viewModelConnect()
+    }
+    
+    private func viewModelConnect(){
+        viewModel.delegate = self
+        viewModel.fetchGames { [weak self] model in
+            var collectionViewData = model
+            for i in 0...4 {
+                collectionViewData?.remove(at: i)
+            }
+            self?.gameData = collectionViewData ?? []
+            self?.scrollImage(gameResult: model ?? [])
+            
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
+    }
+    
+    private func addSubview() {
+        view.addSubview(pageController)
+        view.addSubview(errorLabel)
+        view.addSubview(collectionView)
+        view.addSubview(scrollView)
+    }
+    
+    private func drawDesign() {
+        view.backgroundColor = .white
+        searchController.searchBar.placeholder =  "Search Games"
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+        searchController.searchBar.sizeToFit()
+        collectionView.register(GameCollectionViewCell.self, forCellWithReuseIdentifier: GameCollectionViewCell.Identifier.path.rawValue)
+        scrollView.delegate = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
 }
 
