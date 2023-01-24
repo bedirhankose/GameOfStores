@@ -17,15 +17,19 @@ final class Connect {
     }
 }
 
-class Splash: UIViewController {
+// MARK: - Splash Screen & Swifty Gif
+final class Splash: UIViewController {
 
+    let logoAnimationView = LogoAnimationView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        view.addSubview(logoAnimationView)
+        configure()
     }
     
-
-    
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animation()
+    }
 }
