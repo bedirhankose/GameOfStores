@@ -27,4 +27,21 @@ final class CoreDataManager {
         request.returnsObjectsAsFaults = false
         return request
     }
+    
+    private func uniqueGameNamePredicate(of request: NSFetchRequest<Game>, with uniqueName: String) -> NSPredicate {
+        request.predicate =
+            NSPredicate(format: "name == %@", uniqueName)
+        return request.predicate!
+    }
+    
+    func getGamesFromPersistance(completion: @escaping (Result<[Game], Error>) -> Void){
+        do {
+            let request = getRequest()
+            let games = try moc.fetch(request)
+            completion(.success(games))
+        } catch {
+            completion(.failure(error))
+        }
+
+    }
 }
