@@ -134,7 +134,7 @@ final class GameHomeController: UIViewController, GameOutput{
     }
     
     private func drawDesign() {
-        view.backgroundColor = .black
+        view.backgroundColor = .systemGray3
         searchController.searchBar.placeholder =  "Search Games"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController

@@ -55,7 +55,7 @@ extension Splash {
 extension Splash {
     
     private func configure() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray5
         view.addSubview(logoAnimationView.logoGifImageView)
         drawDesign()
         logoAnimationView.logoGifImageView.delegate = self

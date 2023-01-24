@@ -14,7 +14,7 @@ extension GameTabBarController: UITabBarControllerDelegate {
     
     func setUpTabBar() {
         self.tabBar.tintColor = .systemIndigo
-        self.tabBar.backgroundColor = .white
+        self.tabBar.backgroundColor = .systemGray5
         navigationItem.titleView?.isHidden = true
         navigationItem.hidesBackButton = true
         let VC1 = UINavigationController(rootViewController: GameHomeController())

@@ -132,7 +132,7 @@ class GameDetailController: UIViewController {
     }
     
     private func drawDesign() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray4
         let urlImage = URL(string: gameDetailResults.backgroundImage)
         imageView.kf.setImage(with: urlImage)
         nameLabel.text = gameDetailResults.name

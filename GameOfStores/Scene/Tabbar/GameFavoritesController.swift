@@ -22,7 +22,7 @@ class GameFavoritesController: UIViewController {
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .white
+        cv.backgroundColor = .systemGray4
         return cv
     }()
     
@@ -57,7 +57,7 @@ class GameFavoritesController: UIViewController {
         collectionView.register(GameCollectionViewCell.self, forCellWithReuseIdentifier: GameCollectionViewCell.Identifier.path.rawValue)
         collectionView.delegate = self
         collectionView.dataSource = self
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray3
     }
     
     private func addSubviews() {
