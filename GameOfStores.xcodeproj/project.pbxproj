@@ -24,6 +24,7 @@
 		7F9395F129801848002085C0 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395F029801848002085C0 /* GameDetailModel.swift */; };
 		7F9395F329801866002085C0 /* GameListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395F229801866002085C0 /* GameListModel.swift */; };
 		7F9395F729801FCD002085C0 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395F629801FCD002085C0 /* GameViewModel.swift */; };
+		7F9395FA29802054002085C0 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9395F929802054002085C0 /* GameCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		7F9395F029801848002085C0 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		7F9395F229801866002085C0 /* GameListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListModel.swift; sourceTree = "<group>"; };
 		7F9395F629801FCD002085C0 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		7F9395F929802054002085C0 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		7F9395F429801CC7002085C0 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7F9395F829802029002085C0 /* Cell */,
 				7F9395F529801CD7002085C0 /* Home */,
 			);
 			path = Scene;
@@ -214,6 +217,14 @@
 				7F9395F629801FCD002085C0 /* GameViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		7F9395F829802029002085C0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7F9395F929802054002085C0 /* GameCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F9395EC29801446002085C0 /* CoreDataStack.swift in Sources */,
+				7F9395FA29802054002085C0 /* GameCollectionViewCell.swift in Sources */,
 				7F9395EA298013F6002085C0 /* CoreDataManager.swift in Sources */,
 				7F9395E329801121002085C0 /* Services.swift in Sources */,
 				7F9395F329801866002085C0 /* GameListModel.swift in Sources */,
