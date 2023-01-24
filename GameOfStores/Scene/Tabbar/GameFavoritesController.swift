@@ -74,3 +74,36 @@ extension GameFavoritesController {
         }
     }
 }
+
+// MARK: - CollectionView Func
+extension GameFavoritesController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return favoritedGames.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell: GameCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: GameCollectionViewCell.Identifier.path.rawValue, for: indexPath) as? GameCollectionViewCell else {
+            return UICollectionViewCell()}
+        
+        print(favoritedGames[indexPath.row])
+        cell.layer.borderWidth = 3
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.cornerRadius = 12
+        cell.clipsToBounds = true
+        let favoriteGame = favoritedGames[indexPath.row]
+        cell.saveFavoriteGame(model: favoriteGame)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(
+            width: collectionView.frame.size.width,
+            height: collectionView.frame.size.height / 6
+        )
+    }
+}
