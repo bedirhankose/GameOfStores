@@ -1,4 +1,4 @@
-#Simpra iOS Final Project
+# Simpra iOS Final Project
 
 # GameOfStores
 A programmatically created application that pulls API data from the RAWG website, displays games using 3rd party libraries, can search and set favorites. 
