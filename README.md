@@ -1,6 +1,6 @@
 # Simpra iOS Final Project
 
-# GameOfStores
+# Game Of Stores
 A programmatically created application that pulls API data from the RAWG website, displays games using 3rd party libraries, can search and set favorites. 
 
 ## Prerequisites
@@ -13,7 +13,7 @@ A programmatically created application that pulls API data from the RAWG website
 
 1. Clone and setup the GameOfStores project.
 
-2. Open in Xcode: open GameOfStores.xcprohect.
+2. Open in Xcode: open GameOfStores.xcproject.
 
 ## Adding SDK iOS via Swift Package Manager
 
@@ -40,7 +40,7 @@ A programmatically created application that pulls API data from the RAWG website
 - SwiftyGif
 - ScrollView
 - Collection View
-- -Core Data
+- Core Data
 
 
 ## PREVIEW
